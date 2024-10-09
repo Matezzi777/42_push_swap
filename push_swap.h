@@ -5,6 +5,7 @@
 # include "my_printf/ft_printf.h"
 # include <stdbool.h>
 
+//Structure élément de stack
 typedef struct s_node
 {
 	struct s_node	*prev;
@@ -12,5 +13,10 @@ typedef struct s_node
 	int				value;
 	int				pos;
 }			t_node;
+
+//parsing.c
+t_node	*ft_parse_arguments(int argc, char **argv);
+//utils.c
+int		print_error(void);
 
 #endif
