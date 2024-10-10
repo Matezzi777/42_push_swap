@@ -5,7 +5,10 @@ INCLUDES = -I/usr/include -Ilibft -Imy_printf
 RM = rm -rf
 
 NAME = push_swap
-SRCS = push_swap.c
+SRCS = push_swap.c \
+		parsing.c \
+		utils.c \
+		populate_stack.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT = -Llibft -l:libft.a
@@ -39,7 +42,7 @@ make_printf:
 #CLEANING RULES
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(GREEN)SO_LONG					$(CUT)$(RED)[DELETE]$(CUT)"
+	@echo "$(RED)$(NAME)				$(CUT)$(RED)[DELETE]$(CUT)"
 
 clean: clean_libft clean_printf
 	@$(RM) *.o
