@@ -8,7 +8,12 @@ NAME = push_swap
 SRCS = push_swap.c \
 		parsing.c \
 		utils.c \
-		populate_stack.c
+		populate_stack.c \
+		sort.c \
+		swap.c \
+		push.c \
+		rotate.c \
+		reverse_rotate.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT = -Llibft -l:libft.a
