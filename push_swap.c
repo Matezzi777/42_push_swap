@@ -2,9 +2,8 @@
 
 /*
 			ETAT ACTUEL
-	- Parsing :
-		- Implémenter valeurs maximales et minimales (INT_MAX et INT_MIN) comme des erreurs (ft_check_param(char *param))
-		- Gérer les leaks causés par ft_split() dans parse_from_string().
+	- Parsing	:	OK
+	- Tri		:	En cours...
 */
 
 //Trie la stack passée (coeur du programme)
@@ -23,17 +22,13 @@ int	main(int argc, char **argv)
 
 	a = ft_parse_arguments(argc, argv);				// Parsing des arguments (fait les actions nécessaires et retourne NULL en cas d'erreur)
 	if (!a)
-		return (0);
-	ft_printf("a : %p\n", &a);
+		return (1);
 	cursor = a;
 	while (cursor != NULL)
 	{
-		ft_printf("%d (%d)\n", cursor->value, cursor->pos);
+		ft_printf("	%d : %d\n", cursor->pos, cursor->value);
 		cursor = cursor->next;
 	}
-	// if (a == NULL)
-		// return (1);
-	// ft_sort(&a);
+	ft_sort(&a);
 	ft_free_stack(a);
-	ft_printf("\n");
 }
