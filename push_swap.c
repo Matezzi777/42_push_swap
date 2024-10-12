@@ -14,21 +14,37 @@
 // 	b = NULL;
 // }
 
+void	dump_stack(t_node *stack)
+{
+	while(stack)
+	{
+		ft_printf("%d : %d\n", stack->pos, stack->value);
+		stack = stack->next;
+	}
+}
+
 //MAIN
 int	main(int argc, char **argv)
 {
 	t_node	*a;										// Déclaration du haut de la stack a
-	t_node	*cursor;
+	t_node	*b;
 
 	a = ft_parse_arguments(argc, argv);				// Parsing des arguments (fait les actions nécessaires et retourne NULL en cas d'erreur)
 	if (!a)
 		return (1);
-	cursor = a;
-	while (cursor != NULL)
-	{
-		ft_printf("	%d : %d\n", cursor->pos, cursor->value);
-		cursor = cursor->next;
-	}
-	ft_sort(&a);
+	b = ft_parse_arguments(argc, argv);
+	ft_printf("\nBEFORE :\n* a\n");
+	dump_stack(a);
+	ft_printf("* b\n");
+	dump_stack(b);
+	// swap(a);
+	// swap(b);
+	ss(a, b);
+	ft_printf("\nAFTER :\n* a\n");
+	dump_stack(a);
+	ft_printf("* b\n");
+	dump_stack(b);
+	// ft_sort(&a);
 	ft_free_stack(a);
+	ft_free_stack(b);
 }

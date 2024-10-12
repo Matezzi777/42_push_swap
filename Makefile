@@ -9,7 +9,6 @@ SRCS = push_swap.c \
 		parsing.c \
 		utils.c \
 		populate_stack.c \
-		sort.c \
 		swap.c \
 		push.c \
 		rotate.c \
