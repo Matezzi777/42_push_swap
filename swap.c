@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	swap(t_node *stack)
+static void	swap(t_node *stack)
 {
 	int	temp_value;
 
@@ -8,9 +8,21 @@ void	swap(t_node *stack)
 	stack->value = stack->next->value;
 	stack->next->value = temp_value;
 }
+void	sa(t_node *a)
+{
+	ft_printf("sa\n");
+	swap(a);
+}
+
+void	sb(t_node *b)
+{
+	ft_printf("sb\n");
+	swap(b);
+}
 
 void	ss(t_node *a, t_node *b)
 {
+	ft_printf("ss\n");
 	swap(a);
 	swap(b);
 }
