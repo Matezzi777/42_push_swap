@@ -49,11 +49,11 @@ static bool	check_param(char *param)
 	int	i;
 
 	i = -1;
-	if (param[0] == '-' && ft_strlen(param) == 1)						// Si l'argument est "-"
+	if (ft_strlen(param) == 1 && (param[0] == '-' || param[0] == '+'))					// Si l'argument est "-" ou "+"
 		return (false);
 	while (param[++i])													// Pour chaque caractère de l'argument
 	{
-		if (i == 0 && !(ft_isdigit(param[i]) || param[i] == '-'))			// Si le premier char est différent de '-' ou d'un chiffre
+		if (i == 0 && !(ft_isdigit(param[i]) || param[i] == '-' || param[i] == '+'))			// Si le premier char est différent de '-', '+' ou d'un chiffre
 				return (false);													// Retourne 0
 		else if (i > 0 && !ft_isdigit(param[i]))							// Sinon si ce n'est pas le premier char et que le char n'est pas un chiffre
 				return (false);													// Retourne 0
