@@ -21,17 +21,21 @@ t_node	*populate_stack(char **argv, bool skip_first);
 //utils.c
 void	ft_free_stack(t_node *stack);
 int		print_error(void);
+
 //swap.c
-void	swap(t_node *stack);
+void	sa(t_node *a);
+void	sb(t_node *b);
 void	ss(t_node *a, t_node *b);
 //push.c
 void	pa(t_node *a, t_node *b);
 void	pb(t_node *a, t_node *b);
 //rotate.c
-void	rotate(t_node *stack);
+void	ra(t_node *a);
+void	rb(t_node *b);
 void	rr(t_node *a, t_node *b);
 //reverse_rotate.c
-void	reverse_rotate(t_node *stack);
+void	rra(t_node *a);
+void	rrb(t_node *b);
 void	rrr(t_node *a, t_node *b);
 
 #endif
