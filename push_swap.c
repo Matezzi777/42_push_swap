@@ -59,10 +59,10 @@ int	main(int argc, char **argv)
 		return (1);
 	b = ft_parse_arguments(argc, argv);
 	dump_stacks(a, b);
-	ra(a);
-	dump_stacks(a, b);
-	pa(a, b);
-	dump_stacks(a, b);
+	// ra(a);
+	// dump_stacks(a, b);
+	// pa(a, b);
+	// dump_stacks(a, b);
 	// ft_sort(&a);
 	ft_free_stack(a);
 	ft_free_stack(b);
