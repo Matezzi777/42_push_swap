@@ -31,10 +31,9 @@ static bool	ft_is_valid_int(const char *param)
 	sign = 1;
 	i = -1;
 	if (param[0] == '-')
-	{
 		sign = -1;
+	if (param[0] == '-' || param[0] == '+')
 		i++;
-	}
 	while (param[++i])
 		num = num * 10 + param[i] - '0';
 	num = num * sign;
