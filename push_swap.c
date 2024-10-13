@@ -52,18 +52,18 @@ void	dump_stack(t_node *stack)
 int	main(int argc, char **argv)
 {
 	t_node	*a;										// Déclaration du haut de la stack a
-	t_node	*b;
+	// t_node	*b;
 
 	a = ft_parse_arguments(argc, argv);				// Parsing des arguments (fait les actions nécessaires et retourne NULL en cas d'erreur)
 	if (!a)
 		return (1);
-	b = ft_parse_arguments(argc, argv);
-	dump_stacks(a, b);
+	// b = ft_parse_arguments(argc, argv);
+	dump_stack(a);
 	// ra(a);
 	// dump_stacks(a, b);
-	// pa(a, b);
-	// dump_stacks(a, b);
+	ra(a);
+	dump_stack(a);
 	// ft_sort(&a);
 	ft_free_stack(a);
-	ft_free_stack(b);
+	// ft_free_stack(b);
 }
