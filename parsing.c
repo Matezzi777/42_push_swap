@@ -6,10 +6,10 @@ static bool	double_found(char **argv, bool skip_first)
 	int	j;
 
 	i = -1;
+	if (skip_first)
+		i++;
 	while (argv[++i])
 	{
-		if (skip_first)
-			i++;
 		j = i;
 		while (argv[++j])
 		{
