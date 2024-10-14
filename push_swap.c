@@ -6,7 +6,7 @@
 /*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:26:21 by mmartina          #+#    #+#             */
-/*   Updated: 2024/10/14 17:49:23 by mmartina         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:09:33 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,48 +26,19 @@
 // 	b = NULL;
 // }
 
-void	dump_stack(t_node *stack, char name)
-{
-	t_node	*current;
-
-	ft_printf("%c :	", name);
-	current = stack;
-	if (!current)
-	{
-		ft_printf("Empty.\n");
-		return ;
-	}
-	while (current)
-	{
-		ft_printf("[%d] ", current->value);
-		current = current->next;
-	}
-	ft_printf("\n");
-}
-
-void	dump_both_stacks(t_node *a, t_node *b)
-{
-	dump_stack(a, 'A');
-	dump_stack(b, 'B');
-}
-
 //MAIN
 int	main(int argc, char **argv)
 {
 	t_node	*a;
-	t_node	*b;
 
 	a = ft_parse_arguments(argc, argv);
-	if (!a)
-		return (1);
-	b = NULL;
-	ft_printf("\n=============================================\n");
-	dump_both_stacks(a, b);
-	// == TESTS ==
-
-	// dump_both_stacks(a, b);
-	
-	// ===========
+	if (a)
+	{
+		dump_stack(a, 'A');
+		ft_printf("\n");
+		ft_sort(a);
+		ft_printf("\n");
+		dump_stack(a, 'A');
+	}
 	ft_free_stack(a);
-	ft_free_stack(b);
 }
