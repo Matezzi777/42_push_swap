@@ -7,6 +7,7 @@ RM = rm -rf
 NAME = push_swap
 SRCS = push_swap.c \
 		parsing.c \
+		parsing_utils.c \
 		utils.c \
 		populate_stack.c \
 		swap.c \
