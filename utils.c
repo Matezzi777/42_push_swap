@@ -2,12 +2,16 @@
 
 void	ft_free_stack(t_node *stack)
 {
-	while (stack->next)
+	t_node *current;
+	t_node *next_node;
+
+	current = stack;
+	while (current)
 	{
-		stack = stack->next;
-		free(stack->prev);
+		next_node = current->next;
+		free(current);
+		current = next_node;
 	}
-	free(stack);
 }
 
 //	Print le message d'erreur
