@@ -6,7 +6,7 @@
 /*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:26:21 by mmartina          #+#    #+#             */
-/*   Updated: 2024/10/14 15:27:17 by mmartina         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:49:23 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,26 +64,10 @@ int	main(int argc, char **argv)
 	ft_printf("\n=============================================\n");
 	dump_both_stacks(a, b);
 	// == TESTS ==
-	sa(a);
-	sb(b);
-	dump_both_stacks(a, b);
-	pb(&a, &b);
-	pb(&a, &b);
-	pb(&a, &b);
-	dump_both_stacks(a, b);
-	ra(a);
-	rb(b);
-	dump_both_stacks(a, b);
-	rra(a);
-	rrb(b);
-	dump_both_stacks(a, b);
-	sa(a);
-	dump_both_stacks(a, b);
-	pa(&a, &b);
-	pa(&a, &b);
-	pa(&a, &b);
+
+	// dump_both_stacks(a, b);
+	
 	// ===========
-	dump_both_stacks(a, b);
 	ft_free_stack(a);
 	ft_free_stack(b);
 }

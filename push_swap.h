@@ -6,7 +6,7 @@
 /*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:11:19 by mmartina          #+#    #+#             */
-/*   Updated: 2024/10/14 15:15:12 by mmartina         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:52:41 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct s_node
 
 //parsing.c
 t_node	*ft_parse_arguments(int argc, char **argv);
+//parsing_utils.c
+bool	double_found(char **argv, bool skip_first);
+bool	ft_is_valid_int(const char *param);
 //populate_stack.c
 t_node	*populate_stack(char **argv, bool skip_first);
 //utils.c
