@@ -27,12 +27,16 @@ void	reverse_rotate(t_node *stack)
 void	rra(t_node *a)
 {
 	ft_printf("rra\n");
+	if (!a)
+		return ;
 	reverse_rotate(a);
 }
 
 void	rrb(t_node *b)
 {
 	ft_printf("rrb\n");
+	if (!b)
+		return ;
 	reverse_rotate(b);
 	
 }
@@ -40,6 +44,12 @@ void	rrb(t_node *b)
 void	rrr(t_node *a, t_node *b)
 {
 	ft_printf("rrr\n");
-	reverse_rotate(a);
-	reverse_rotate(b);
+	if (!a)
+		(void)a;
+	else
+		reverse_rotate(a);
+	if (!b)
+		(void)b;
+	else
+		reverse_rotate(b);
 }

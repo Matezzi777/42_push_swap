@@ -16,18 +16,28 @@ void	rotate(t_node *stack)
 void	ra(t_node *a)
 {
 	ft_printf("ra\n");
+	if (!a)
+		return ;
 	rotate(a);
 }
 
 void	rb(t_node *b)
 {
 	ft_printf("rb\n");
+	if (!b)
+		return ;
 	rotate(b);
 }
 
 void	rr(t_node *a, t_node *b)
 {
 	ft_printf("rr\n");
-	rotate(a);
-	rotate(b);
+	if (!a)
+		(void)a;
+	else
+		rotate(a);
+	if (!b)
+		(void)b;
+	else
+		rotate(b);
 }
