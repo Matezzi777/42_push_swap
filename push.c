@@ -1,46 +1,58 @@
 #include "push_swap.h"
 
-void	reset_pos(t_node *stack)
+static void	update_pos(t_node *stack)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	while (stack)
 	{
-		stack->pos = i;
+		stack->pos = ++i;
 		stack = stack->next;
-		i++;
 	}
+	return ;
 }
 
-void	push(t_node **dest, t_node **src)
+static void	push(t_node **a, t_node **b)
 {
 	t_node	*temp;
 
-	if (!src)
+	if (!*b)
 		return ;
-	temp = *dest;
-	*dest = *src;
-	*src = (*src)->next;
-	(*dest)->next = temp;
-	reset_pos(*src);
-	reset_pos(*dest);
+	
+	temp = *b;
+	
+	*b = (*b)->next;
+	if (*b)
+		(*b)->prev = NULL;
+	
+	temp->next = *a;
+
+	if (*a)
+		(*a)->prev = temp;
+
+	*a = temp;
+	(*a)->prev = NULL;
 }
 
-void	pa(t_node *a, t_node *b)
+void	pa(t_node **a, t_node **b)
 {
 	ft_printf("pa\n");
 	if (!b)
 		return ;
 	else
-		push(&a, &b);
+		push(a, b);
+	update_pos(*a);
+	update_pos(*b);
 }
 
-void	pb(t_node *a, t_node *b)
+void	pb(t_node **a, t_node **b)
 {
 	ft_printf("pb\n");
 	if (!a)
 		return ;
 	else
-		push(&b, &a);
+		push(b, a);
+	update_pos(*a);
+	update_pos(*b);
 }
