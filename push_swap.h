@@ -27,8 +27,8 @@ void	sa(t_node *a);
 void	sb(t_node *b);
 void	ss(t_node *a, t_node *b);
 //push.c
-void	pa(t_node *a, t_node *b);
-void	pb(t_node *a, t_node *b);
+void	pa(t_node **a, t_node **b);
+void	pb(t_node **a, t_node **b);
 //rotate.c
 void	ra(t_node *a);
 void	rb(t_node *b);
