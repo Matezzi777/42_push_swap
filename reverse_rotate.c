@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 15:16:33 by mmartina          #+#    #+#             */
+/*   Updated: 2024/10/14 15:16:34 by mmartina         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int		get_last_value(t_node *stack)
+int	get_last_value(t_node *stack)
 {
 	while (stack->next)
 	{
@@ -38,7 +50,6 @@ void	rrb(t_node *b)
 	if (!b)
 		return ;
 	reverse_rotate(b);
-	
 }
 
 void	rrr(t_node *a, t_node *b)

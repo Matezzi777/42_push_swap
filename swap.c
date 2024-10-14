@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 15:17:12 by mmartina          #+#    #+#             */
+/*   Updated: 2024/10/14 15:25:35 by mmartina         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	swap(t_node *stack)
@@ -8,6 +20,7 @@ static void	swap(t_node *stack)
 	stack->value = stack->next->value;
 	stack->next->value = temp_value;
 }
+
 void	sa(t_node *a)
 {
 	ft_printf("sa\n");
