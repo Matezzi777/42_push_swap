@@ -14,38 +14,29 @@
 // 	b = NULL;
 // }
 
-void	dump_stacks(t_node *a, t_node *b)
+void	dump_stack(t_node *stack, char name)
 {
-	ft_printf("\n    A --- B\n");
-	while (a || b)
+	t_node	*current;
+
+	ft_printf("%c :\n	", name);
+	current = stack;
+	if (!current)
 	{
-		if (a && b)
-		{
-			ft_printf("%d : %d --- %d\n", a->pos, a->value, b->value);
-			a = a->next;
-			b = b->next;
-		}
-		else if (a)
-		{
-			ft_printf("%d : %d\n", a->pos, a->value);
-			a = a->next;
-		}
-		else
-		{
-			ft_printf("%d :   --- %d\n", b->pos, b->value);
-			b = b->next;
-		}
+		ft_printf("La stack est vide.\n");
+		return ;
+	}
+	while(current)
+	{
+		ft_printf("[%d:%d] ", current->pos, current->value);
+		current = current->next;
 	}
 	ft_printf("\n");
 }
 
-void	dump_stack(t_node *stack)
+void	dump_both_stacks(t_node *a, t_node *b)
 {
-	while(stack)
-	{
-		ft_printf("	%d : %d\n", stack->pos, stack->value);
-		stack = stack->next;
-	}
+	dump_stack(a, 'A');
+	dump_stack(b, 'B');
 }
 
 //MAIN
@@ -55,15 +46,23 @@ int	main(int argc, char **argv)
 	// t_node	*b;
 
 	a = ft_parse_arguments(argc, argv);				// Parsing des arguments (fait les actions nécessaires et retourne NULL en cas d'erreur)
-	if (!a)
-		return (1);
-	// b = ft_parse_arguments(argc, argv);
-	dump_stack(a);
-	// ra(a);
-	// dump_stacks(a, b);
-	ra(a);
-	dump_stack(a);
-	// ft_sort(&a);
-	ft_free_stack(a);
+	if (a)
+		return(1);
+	else
+		return (0);
+	// if (!a)
+	// 	return (1);
+	// b = NULL;
+	// dump_both_stacks(a, b);
+
+	// // == TESTS ==
+	// // sa(a);
+	// // rrb(b);
+	// // pa(&a, &b);
+	// pb(&a, &b);
+	// // ===========
+	
+	// dump_both_stacks(a, b);
+	// ft_free_stack(a);
 	// ft_free_stack(b);
 }
