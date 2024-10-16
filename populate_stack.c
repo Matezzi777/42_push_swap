@@ -6,7 +6,7 @@
 /*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:20:52 by mmartina          #+#    #+#             */
-/*   Updated: 2024/10/14 15:20:53 by mmartina         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:31:11 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ bool	ft_add_node(t_node *stack, int value)
 	node->pos = stack->pos + 1;
 	node->value = value;
 	node->next = NULL;
+	node->target = NULL;
+	node->cost = -1;
+	node->min = false;
+	node->max = false;
+	node->direction = false;
 	return (true);
 }
 
@@ -59,6 +64,7 @@ t_node	*populate_stack(char **argv, bool skip_first)
 	{
 		if (!ft_add_node(stack, ft_atoi(argv[i])))
 		{
+			ft_free_stack(stack);
 			print_error();
 			return (NULL);
 		}
