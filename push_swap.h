@@ -6,7 +6,7 @@
 /*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:11:19 by mmartina          #+#    #+#             */
-/*   Updated: 2024/10/14 21:04:28 by mmartina         ###   ########.fr       */
+/*   Updated: 2024/10/17 01:14:07 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ typedef struct s_node
 {
 	struct s_node	*prev;
 	struct s_node	*next;
+	struct s_node	*target;
 	int				value;
 	int				pos;
+	int				cost;
+	bool			min;
+	bool			max;
+	bool			direction;
 }			t_node;
 
 //parsing.c
@@ -34,6 +39,7 @@ bool	ft_is_valid_int(const char *param);
 //populate_stack.c
 t_node	*populate_stack(char **argv, bool skip_first);
 //utils.c
+void	ft_print_elem_details(t_node *elem, char *name, bool jump);
 void	dump_stack(t_node *stack, char name);
 void	dump_both_stacks(t_node *a, t_node *b);
 void	ft_free_stack(t_node *stack);
@@ -58,9 +64,10 @@ void	rrr(t_node *a, t_node *b);
 //sort.c
 void	ft_sort(t_node *a);
 //list_utils.c
-int	ft_find_min(t_node *stack);
-int	ft_find_max(t_node *stack);
-int	ft_get_index_from_value(t_node *stack, int target);
-
+int		ft_find_min(t_node *stack);
+int		ft_find_max(t_node *stack);
+int		ft_get_index_from_value(t_node *stack, int target);
+t_node	*ft_list_head(t_node *stack);
+t_node	*ft_list_last(t_node *stack);
 
 #endif
