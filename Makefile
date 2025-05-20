@@ -7,7 +7,13 @@ RM = rm -f
 NAME = push_swap
 
 ##############################   FILES   ##############################
-RAW_SRCS = push_swap.c
+RAW_SRCS = push_swap.c \
+			push.c \
+			swap.c \
+			rotate.c \
+			reverse_rotate.c \
+			stack_utils.c \
+			parsing.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 
@@ -15,7 +21,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): libft $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBFT)
 
 libft:
 	cd libft && make bonus

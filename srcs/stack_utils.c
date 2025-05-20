@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/20 12:53:01 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/21 01:51:10 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,21 @@ t_bool	add_stack_elem(t_stack **stack, t_stack *node)
 	cursor->next = node;
 	node->prev = cursor;
 	return (TRUE);
+}
+
+int	stack_size(t_stack **stack)
+{
+	int		count;
+	t_stack	*cursor;
+
+	if (!stack || !(*stack))
+		return (0);
+	cursor = *stack;
+	count = 1;
+	while (cursor->next)
+	{
+		cursor = cursor->next;
+		count++;
+	}
+	return (count);
 }
