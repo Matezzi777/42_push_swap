@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:15:45 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/20 13:39:54 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:13:23 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,10 @@ int	main(int argc, char **argv)
 			cursor = cursor->next;
 		}
 		ft_printf("\n");
-		pa(&stack_a, &stack_b);
-		pa(&stack_a, &stack_b);
-		pb(&stack_a, &stack_b);
-		pa(&stack_a, &stack_b);
+		rr(&stack_a, &stack_b);
+		rrr(&stack_a, &stack_b);
 		if (!stack_a)
-		ft_printf("STACK A : EMPTY");
+			ft_printf("STACK A : EMPTY");
 		else
 		{
 			ft_printf("STACK A : [%d]", stack_a->value);
@@ -72,7 +70,7 @@ int	main(int argc, char **argv)
 			}
 		}
 		if (!stack_b)
-		ft_printf("STACK B : EMPTY");
+			ft_printf("STACK B : EMPTY");
 		else
 		{
 			ft_printf("\nSTACK B : [%d]", stack_b->value);

@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/20 13:26:20 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:11:17 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ void	sb(t_stack **a, t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+void	ra(t_stack **a, t_stack **b);
+void	rb(t_stack **a, t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a, t_stack **b);
+void	rrb(t_stack **a, t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
 
 //Stack Utilitaries
 t_stack	*create_node(int value);
