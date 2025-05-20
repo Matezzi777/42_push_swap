@@ -1,7 +1,7 @@
 ############################### COMMANDS ##############################
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I:includes
+INCLUDES = -I./includes
 LIBFT = -L./libft -lft
 RM = rm -f
 NAME = push_swap
@@ -18,7 +18,7 @@ $(NAME): libft $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
 
 libft:
-	cd libft && make
+	cd libft && make bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) $(LIBFT) -c $< -o $@

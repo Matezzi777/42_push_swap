@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/20 02:32:51 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:26:20 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,19 @@ typedef struct	s_stack
 	int				position;
 	t_direction		direction;
 	struct s_stack	*target;
+	struct s_stack	*prev;
 	struct s_stack	*next;
 }				t_stack;
+
+//Actions
+void	sa(t_stack **a, t_stack **b);
+void	sb(t_stack **a, t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+
+//Stack Utilitaries
+t_stack	*create_node(int value);
+t_bool	add_stack_elem(t_stack **stack, t_stack *node);
 
 #endif
