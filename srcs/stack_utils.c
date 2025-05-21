@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/21 20:25:15 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/21 23:55:41 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,16 @@ int	stack_size(t_stack **stack)
 	return (count);
 }
 
-void	free_stack(t_stack *stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*next;
 
-	while (stack)
+	if (!stack)
+		return ;
+	while (*stack)
 	{
-		next = stack->next;
-		free(stack);
-		stack = next;
+		next = (*stack)->next;
+		free(*stack);
+		*stack = next;
 	}
 }
