@@ -2,7 +2,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I./includes
-LIBFT = -L./libft -lft
+LIBFT = -L./libft -l:libft.a
 RM = rm -f
 NAME = push_swap
 
@@ -27,7 +27,7 @@ libft:
 	cd libft && make bonus
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) $(LIBFT) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 fclean: clean
 	$(RM) $(NAME)
