@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/21 01:50:29 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/21 20:25:25 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef enum	e_direction
 
 typedef struct	s_stack
 {
-	int				value;
+	long			value;
 	int				cost;
 	int				position;
 	t_direction		direction;
@@ -47,6 +47,8 @@ void	rrr(t_stack **a, t_stack **b);
 //Stack Utilitaries
 t_stack	*create_node(int value);
 t_bool	add_stack_elem(t_stack **stack, t_stack *node);
+int		stack_size(t_stack **stack);
+void	free_stack(t_stack *stack);
 
 //Parsing
 t_stack	*parse_arguments(int argc, char **argv);
