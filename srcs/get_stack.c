@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   get_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:45 by maxmart2         ###   ########.fr       */
+/*   Created: 2025/05/24 01:19:58 by maxmart2          #+#    #+#             */
+/*   Updated: 2025/05/24 01:23:41 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_stack	*get_stack_from_string(char *str)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	t_stack	*cursor;
+	int		i;
+	t_stack	*stack;
+	t_stack	*node;
 
-	if (argc < 2)
-		return (0);
-	stack_a = parse_arguments(argc, argv);
-	if (!stack_a)
+	stack = create_node(ft_atol(str));
+	if (!stack)
+		return (NULL);
+	i = 0;
+	while (str[i])
 	{
-		ft_printf("Error (parsing)\n");
-		return (0);
-	}
-	else
-	{
-		cursor = stack_a;
-		while (cursor)
+		while (str[i] == ' ' || str[i] == '\t'
+			|| str[i] == '+' || str[i] == '-')
+			i++;
+		while (ft_isdigit(str[i]))
+			i++;
+		if (str[i])
 		{
-			ft_printf("[%d] -> ", (int)(cursor->value));
-			cursor = cursor->next;
+			node = create_node(ft_atol(&str[i]));
+			if (!node)
+				return (free_stack(&stack));
+			add_stack_elem(&stack, node);
 		}
-		ft_printf("\n");
 	}
-	stack_b = NULL;
-	(void)stack_b;
-	free_stack(&stack_a);
+	return (stack);
 }

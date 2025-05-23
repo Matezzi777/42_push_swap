@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:35:31 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/20 12:58:23 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:23:14 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	swap(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;

@@ -8,7 +8,11 @@ RM = rm -rdf
 
 #Files
 NAME = libft.a
-RAW_SRCS = ft_atoi.c \
+RAW_SRCS = ft_atob.c \
+		ft_atoi.c \
+		ft_atol.c \
+		ft_atoll.c \
+		ft_atox.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \

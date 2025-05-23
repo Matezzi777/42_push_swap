@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:45 by maxmart2         ###   ########.fr       */
+/*   Created: 2025/05/24 01:18:14 by maxmart2          #+#    #+#             */
+/*   Updated: 2025/05/24 01:18:50 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_bool	overflow_detected(t_stack *stack)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	t_stack	*cursor;
+	(void)stack;
+	return (FALSE);
+}
 
-	if (argc < 2)
-		return (0);
-	stack_a = parse_arguments(argc, argv);
-	if (!stack_a)
-	{
-		ft_printf("Error (parsing)\n");
-		return (0);
-	}
-	else
-	{
-		cursor = stack_a;
-		while (cursor)
-		{
-			ft_printf("[%d] -> ", (int)(cursor->value));
-			cursor = cursor->next;
-		}
-		ft_printf("\n");
-	}
-	stack_b = NULL;
-	(void)stack_b;
-	free_stack(&stack_a);
+t_bool	double_detected(t_stack *stack)
+{
+	(void)stack;
+	return (FALSE);
 }

@@ -6,14 +6,14 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/21 23:55:41 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 00:36:34 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-t_stack	*create_node(int value)
+t_stack	*create_node(long value)
 {
 	t_stack	*node;
 
@@ -61,16 +61,18 @@ int	stack_size(t_stack **stack)
 	return (count);
 }
 
-void	free_stack(t_stack **stack)
+t_stack	*free_stack(t_stack **stack)
 {
 	t_stack	*next;
 
 	if (!stack)
-		return ;
+		return (NULL);
 	while (*stack)
 	{
 		next = (*stack)->next;
+		ft_printf("Block [%d] freed!\n", (int)((*stack)->value));
 		free(*stack);
-		*stack = next;
+		(*stack) = next;
 	}
+	return (NULL);
 }

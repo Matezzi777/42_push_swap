@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:45 by maxmart2         ###   ########.fr       */
+/*   Created: 2025/05/22 00:01:54 by maxmart2          #+#    #+#             */
+/*   Updated: 2025/05/22 00:11:47 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "push_swap.h"
 
-int	main(int argc, char **argv)
+long	ft_atol(const char *str)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	t_stack	*cursor;
+	int		sign;
+	int		i;
+	long	result;
 
-	if (argc < 2)
-		return (0);
-	stack_a = parse_arguments(argc, argv);
-	if (!stack_a)
+	sign = 1;
+	result = 0;
+	i = 0;
+	while (str[i] && ft_isspace(str[i]))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		ft_printf("Error (parsing)\n");
-		return (0);
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	else
+	while (ft_isdigit(str[i]))
 	{
-		cursor = stack_a;
-		while (cursor)
-		{
-			ft_printf("[%d] -> ", (int)(cursor->value));
-			cursor = cursor->next;
-		}
-		ft_printf("\n");
+		result = result * 10 + str[i] - '0';
+		i++;
 	}
-	stack_b = NULL;
-	(void)stack_b;
-	free_stack(&stack_a);
+	return (sign * result);
 }

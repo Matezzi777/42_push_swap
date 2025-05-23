@@ -13,7 +13,9 @@ RAW_SRCS = push_swap.c \
 			rotate.c \
 			reverse_rotate.c \
 			stack_utils.c \
-			parsing.c
+			parsing.c \
+			parsing_utils.c \
+			get_stack.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 

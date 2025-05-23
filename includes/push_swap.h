@@ -6,21 +6,21 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/21 23:54:45 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:22:26 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef enum	e_direction
+typedef enum e_direction
 {
 	NONE,
 	UP,
 	DOWN
 }				t_direction;
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	long			value;
 	int				cost;
@@ -45,12 +45,15 @@ void	rrb(t_stack **a, t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
 //Stack Utilitaries
-t_stack	*create_node(int value);
+t_stack	*create_node(long value);
 t_bool	add_stack_elem(t_stack **stack, t_stack *node);
 int		stack_size(t_stack **stack);
-void	free_stack(t_stack **stack);
+t_stack	*free_stack(t_stack **stack);
 
 //Parsing
 t_stack	*parse_arguments(int argc, char **argv);
+t_stack	*get_stack_from_string(char *str);
+t_bool	overflow_detected(t_stack *stack);
+t_bool	double_detected(t_stack *stack);
 
 #endif
