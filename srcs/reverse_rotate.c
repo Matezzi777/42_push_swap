@@ -6,13 +6,16 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:04:17 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:23 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:47:18 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	Make a reverse rotation on the stack (first item become last)
+*/
 static void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*first;
@@ -31,6 +34,9 @@ static void	reverse_rotate(t_stack **stack)
 	*stack = last;
 }
 
+/*
+	rra operation
+*/
 void	rra(t_stack **a, t_stack **b)
 {
 	(void)b;
@@ -38,6 +44,9 @@ void	rra(t_stack **a, t_stack **b)
 	reverse_rotate(a);
 }
 
+/*
+	rrb operation
+*/
 void	rrb(t_stack **a, t_stack **b)
 {
 	(void)a;
@@ -45,6 +54,9 @@ void	rrb(t_stack **a, t_stack **b)
 	reverse_rotate(b);
 }
 
+/*
+	rrr operation
+*/
 void	rrr(t_stack **a, t_stack **b)
 {
 	ft_printf("rrr\n");

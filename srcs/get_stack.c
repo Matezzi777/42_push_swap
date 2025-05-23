@@ -6,13 +6,21 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 01:19:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:41 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:36:04 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	Convert the single string argument given to a stack.
+	The string given is considered as valid.
+	Return NULL if an error occured during stack creation.
+	Example : 
+		"1 5 45 -8" become :
+			NULL <- [1] <-> [5] <-> [45] <-> [-8] -> NULL
+*/
 t_stack	*get_stack_from_string(char *str)
 {
 	int		i;

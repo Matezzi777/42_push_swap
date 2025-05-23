@@ -6,13 +6,17 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 01:49:10 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:20:07 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:44:48 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	Create the stack from the string when push_swap is used with an unic argument and check if the arguments are numbers.
+	Return NULL if an error occured during stack creation or if the argument is invalid.
+*/
 static t_stack	*parse_from_string(char *str)
 {
 	int		i;
@@ -27,6 +31,10 @@ static t_stack	*parse_from_string(char *str)
 	return (get_stack_from_string(str));
 }
 
+/*
+	Create the stack from the arguments given when push_swap is used with multiple arguments and check if the arguments are numbers.
+	Return NULL if an error occured during stack creation or if an argument is invalid.
+*/
 static t_stack	*parse_from_array(int argc, char **argv)
 {
 	(void)argc;
@@ -34,6 +42,10 @@ static t_stack	*parse_from_array(int argc, char **argv)
 	return (NULL);
 }
 
+/*
+	Parse the argument(s) passed to push_swap and check if the arguments are unic numbers that fits in an integer.
+	Return NULL if an error occured during stack creation or if an argument is invalid.
+*/
 t_stack	*parse_arguments(int argc, char **argv)
 {
 	t_stack	*stack;

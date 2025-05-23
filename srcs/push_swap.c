@@ -6,13 +6,16 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:45 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:45:02 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	The core of the program.
+*/
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;

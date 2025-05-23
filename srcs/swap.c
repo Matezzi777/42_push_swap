@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:35:31 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:23:14 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:49:13 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	swap(t_stack **stack)
 }
 
 /*
-	Execute a swap() on stack a.
+	sa operation.
 */
 void	sa(t_stack **a, t_stack **b)
 {
@@ -44,7 +44,7 @@ void	sa(t_stack **a, t_stack **b)
 }
 
 /*
-	Execute a swap() on stack b.
+	sb operation.
 */
 void	sb(t_stack **a, t_stack **b)
 {
@@ -53,6 +53,9 @@ void	sb(t_stack **a, t_stack **b)
 	ft_printf("sb\n");
 }
 
+/*
+	ss operation.
+*/
 void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);

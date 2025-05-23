@@ -6,13 +6,16 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 00:36:34 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:50:24 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	Create and initialize a new stack node.
+*/
 t_stack	*create_node(long value)
 {
 	t_stack	*node;
@@ -30,6 +33,9 @@ t_stack	*create_node(long value)
 	return (node);
 }
 
+/*
+	Add a node to the end of the stack.
+*/
 t_bool	add_stack_elem(t_stack **stack, t_stack *node)
 {
 	t_stack	*cursor;
@@ -44,6 +50,9 @@ t_bool	add_stack_elem(t_stack **stack, t_stack *node)
 	return (TRUE);
 }
 
+/*
+	Return the number of nodes contained in the stack.
+*/
 int	stack_size(t_stack **stack)
 {
 	int		count;
@@ -61,6 +70,9 @@ int	stack_size(t_stack **stack)
 	return (count);
 }
 
+/*
+	Free all the memory allocated for the stack.
+*/
 t_stack	*free_stack(t_stack **stack)
 {
 	t_stack	*next;

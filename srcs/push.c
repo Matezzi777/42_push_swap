@@ -6,13 +6,16 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 13:13:48 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/20 13:40:24 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 01:46:04 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	Push the src's top node to dest top.
+*/
 static void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*node;
@@ -29,12 +32,18 @@ static void	push(t_stack **src, t_stack **dest)
 	*dest = node;
 }
 
+/*
+	pa operation
+*/
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	ft_printf("pa\n");
 }
 
+/*
+	pb operation
+*/
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
