@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 01:18:14 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 03:54:37 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 04:05:58 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_stack	*get_stack_from_string(char *str)
 			i++;
 		while (ft_isdigit(str[i]))
 			i++;
-		while (str[i] == ' ' || str[i] == '+' || str[i] == '-')
+		while (str[i] == ' ')
 			i++;
 		if (str[i])
 		{

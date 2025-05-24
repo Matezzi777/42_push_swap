@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:45:02 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 04:04:47 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,16 @@ int	main(int argc, char **argv)
 	stack_a = parse_arguments(argc, argv);
 	if (!stack_a)
 	{
-		ft_printf("Error (parsing)\n");
+		ft_printf("Error\n");
 		return (0);
 	}
-	else
+	cursor = stack_a;
+	while (cursor)
 	{
-		cursor = stack_a;
-		while (cursor)
-		{
-			ft_printf("[%d] -> ", (int)(cursor->value));
-			cursor = cursor->next;
-		}
-		ft_printf("\n");
+		ft_printf("[%d] -> ", (int)(cursor->value));
+		cursor = cursor->next;
 	}
-	stack_b = NULL;
+	ft_printf("\n");
 	(void)stack_b;
 	free_stack(&stack_a);
 }

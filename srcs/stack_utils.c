@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:50:24 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 04:00:15 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ t_stack	*free_stack(t_stack **stack)
 	while (*stack)
 	{
 		next = (*stack)->next;
-		ft_printf("Block [%d] freed!\n", (int)((*stack)->value));
 		free(*stack);
 		(*stack) = next;
 	}
