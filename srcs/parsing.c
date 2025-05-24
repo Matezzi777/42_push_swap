@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 01:49:10 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 02:56:07 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:11:00 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,13 @@ static t_stack	*parse_from_string(char *str)
 	while (str[++i])
 	{
 		if (ft_isdigit(str[i]))
+		{
 			digit_found = TRUE;
-		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '\t'
-			&& str[i] != '+' && str[i] != '-')
+			if (str[i + 1] && !ft_isdigit(str[i + 1]) && str[i + 1] != ' ')
+				return (NULL);
+		}
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '+'
+			&& str[i] != '-')
 			return (NULL);
 		if (str[i] == '+' || str[i] == '-')
 			if (!ft_isdigit(str[i + 1]))
