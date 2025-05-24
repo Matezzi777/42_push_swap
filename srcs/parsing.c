@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 01:49:10 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 03:11:00 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:35:16 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ t_stack	*parse_arguments(int argc, char **argv)
 		stack = parse_from_array(argc, argv);
 	if (!stack)
 		return (NULL);
-	if (double_detected(stack) || overflow_detected(stack))
+	if (double_detected(stack) || overflow_detected(stack, argc, argv))
 		return (free_stack(&stack));
 	return (stack);
 }

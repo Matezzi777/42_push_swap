@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 01:18:14 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 03:15:55 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:47:04 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,47 @@ t_stack	*get_stack_from_string(char *str)
 	return (stack);
 }
 
+static t_bool	overflow_detected_from_chars(char *str)
+{
+	int	i;
+	int	nb_digits;
+
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] == ' ' || str[i] == '+' || str[i] == '-')
+			i++;
+		nb_digits = 0;
+		while (ft_isdigit(str[i]))
+		{
+			nb_digits++;
+			i++;
+		}
+		if (nb_digits > 10)
+			return (TRUE);
+	}
+	return (FALSE);
+}
+
 /*
 	Check if numbers given are small enough to fit in an int variable.
 	Return TRUE if an overflow is detected.
 	Return FALSE if all the numbers are valid.
 */
-t_bool	overflow_detected(t_stack *stack)
+t_bool	overflow_detected(t_stack *stack, int argc, char **argv)
 {
-	(void)stack;
+	int	i;
+
+	i = 0;
+	while (++i < argc)
+		if (overflow_detected_from_chars(argv[i]))
+			return (TRUE);
+	while (stack)
+	{
+		if (stack->value < INT_MIN || stack->value > INT_MAX)
+			return (TRUE);
+		stack = stack->next;
+	}
 	return (FALSE);
 }
 

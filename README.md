@@ -12,9 +12,10 @@
 - ✅ rrr
 
 2. Parsing : ❌
-- Si aucun argument : -> Rend le prompt.
-- Sinon, récupérer chaque argument passé, renvoyer une erreur si :
-	- Un argument n'est pas un entier (positif ou négatif).
+- ✅ Si aucun argument : -> Rend le prompt.
+- ✅ Sinon, récupérer chaque argument passé, renvoyer une erreur si :
+	✅ - Un argument n'est pas un entier (positif ou négatif).
+	✅ - Un argument ne rentre pas dans un int.
 	- Deux arguments sont identiques.
 ❗	Les arguments peuvent être passé comme une suite d'arguments ou comme une seule string avec les arguments séparés par des espaces :
 ❗		Exemple : `./push_swap "1" "2" "3"` ou `./push_swap "1 2 3"` sont valides. Mais `./push_swap "1" "2 3"` n'est pas valide.
