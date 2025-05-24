@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:04:17 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:47:18 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 06:45:10 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 
 /*
-	Make a reverse rotation on the stack (first item become last)
+	Make a reverse rotation on the stack (last item become first)
 */
 static void	reverse_rotate(t_stack **stack)
 {
