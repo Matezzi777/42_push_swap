@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 01:18:14 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 03:47:04 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 03:54:37 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,20 @@ t_bool	overflow_detected(t_stack *stack, int argc, char **argv)
 */
 t_bool	double_detected(t_stack *stack)
 {
-	(void)stack;
+	t_stack	*cursor;
+	t_stack	*next;
+
+	cursor = stack;
+	while (cursor && cursor->next)
+	{
+		next = cursor->next;
+		while (next)
+		{
+			if (cursor->value == next->value)
+				return (TRUE);
+			next = next->next;
+		}
+		cursor = cursor->next;
+	}
 	return (FALSE);
 }
