@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 04:04:47 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 06:41:30 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,32 @@
 */
 int	main(int argc, char **argv)
 {
+	int		size;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_stack	*cursor;
 
 	if (argc < 2)
 		return (0);
 	stack_a = parse_arguments(argc, argv);
+	stack_b = NULL;
 	if (!stack_a)
 	{
 		ft_printf("Error\n");
 		return (0);
 	}
-	cursor = stack_a;
-	while (cursor)
+	size = stack_size(&stack_a);
+	if (is_sorted(&stack_a))
 	{
-		ft_printf("[%d] -> ", (int)(cursor->value));
-		cursor = cursor->next;
+		ft_printf("Already sort\n");
+		free_stack(&stack_a);
+		return (0);
 	}
-	ft_printf("\n");
-	(void)stack_b;
+	else if (size <= 3)
+		sort_small_stack(&stack_a, size);
+	else
+		sort_stack(&stack_a, &stack_b, size);
+
 	free_stack(&stack_a);
+	if (stack_b)
+		free_stack(&stack_b);
 }

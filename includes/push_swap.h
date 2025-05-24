@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 03:35:07 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 06:38:15 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,12 @@ t_stack	*parse_arguments(int argc, char **argv);
 t_stack	*get_stack_from_string(char *str);
 t_bool	overflow_detected(t_stack *stack, int argc, char **argv);
 t_bool	double_detected(t_stack *stack);
+
+//Sort
+void	sort_small_stack(t_stack **a, int size);
+void	sort_stack(t_stack **a, t_stack **b, int size);
+
+//Verif
+t_bool	is_sorted(t_stack **stack);
 
 #endif
