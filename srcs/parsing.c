@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 01:49:10 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 01:44:48 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/24 02:56:07 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,67 @@
 #include "push_swap.h"
 
 /*
-	Create the stack from the string when push_swap is used with an unic argument and check if the arguments are numbers.
-	Return NULL if an error occured during stack creation or if the argument is invalid.
+	Create the stack from the string when push_swap is used with an unic
+	argument and check if the arguments are numbers.
+	Return NULL if an error occured during stack creation or if the argument
+	is invalid.
 */
 static t_stack	*parse_from_string(char *str)
 {
 	int		i;
+	t_bool	digit_found;
 
+	digit_found = FALSE;
 	if (!str || !str[0])
 		return (NULL);
 	i = -1;
 	while (str[++i])
+	{
+		if (ft_isdigit(str[i]))
+			digit_found = TRUE;
 		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '\t'
 			&& str[i] != '+' && str[i] != '-')
 			return (NULL);
+		if (str[i] == '+' || str[i] == '-')
+			if (!ft_isdigit(str[i + 1]))
+				return (NULL);
+	}
+	if (!digit_found)
+		return (NULL);
 	return (get_stack_from_string(str));
 }
 
 /*
-	Create the stack from the arguments given when push_swap is used with multiple arguments and check if the arguments are numbers.
-	Return NULL if an error occured during stack creation or if an argument is invalid.
+	Create the stack from the arguments given when push_swap is used with
+	multiple arguments and check if the arguments are numbers.
+	Return NULL if an error occured during stack creation or if an argument is
+	invalid.
 */
 static t_stack	*parse_from_array(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
-	return (NULL);
+	int		i;
+	t_stack	*stack;
+	t_stack	*node;
+
+	stack = parse_from_string(argv[1]);
+	if (!stack)
+		return (NULL);
+	i = 1;
+	while (++i < argc)
+	{
+		node = parse_from_string(argv[i]);
+		if (!node)
+			return (free_stack(&stack));
+		add_stack_elem(&stack, node);
+	}
+	return (stack);
 }
 
 /*
-	Parse the argument(s) passed to push_swap and check if the arguments are unic numbers that fits in an integer.
-	Return NULL if an error occured during stack creation or if an argument is invalid.
+	Parse the argument(s) passed to push_swap and check if the arguments are
+	unic numbers that fits in an integer.
+	Return NULL if an error occured during stack creation or if an argument is
+	invalid.
 */
 t_stack	*parse_arguments(int argc, char **argv)
 {
