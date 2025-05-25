@@ -6,13 +6,16 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 06:00:00 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 06:07:13 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/25 02:45:10 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
+/*
+	Check if a stack is sorted.
+*/
 t_bool	is_sorted(t_stack **stack)
 {
 	int		size;

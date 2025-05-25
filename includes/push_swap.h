@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 06:38:15 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/25 02:53:15 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,13 @@ t_bool	double_detected(t_stack *stack);
 
 //Sort
 void	sort_small_stack(t_stack **a, int size);
-void	sort_stack(t_stack **a, t_stack **b, int size);
+void	sort_stack(t_stack **a, int size);
 
 //Verif
 t_bool	is_sorted(t_stack **stack);
+
+
+//To delete later
+void	ft_display_stacks(t_stack **a, t_stack **b);
 
 #endif

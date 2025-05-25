@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/24 04:00:15 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/25 03:04:46 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,34 @@ t_stack	*free_stack(t_stack **stack)
 		(*stack) = next;
 	}
 	return (NULL);
+}
+
+void	ft_display_stacks(t_stack **a, t_stack **b)
+{
+	t_stack	*cursor_a;
+	t_stack	*cursor_b;
+
+	ft_printf("	STACK A		STACK B\n");
+	if (!a || !(*a))
+		cursor_a = NULL;
+	else
+		cursor_a = *a;
+	if (!b || !(*b))
+		cursor_b = NULL;
+	else
+		cursor_b = *b;
+	while (cursor_a || cursor_b)
+	{
+		if (cursor_a)
+		{
+			ft_printf("	  [%d]	", cursor_a->value);
+			cursor_a = cursor_a->next;
+		}
+		if (cursor_b)
+		{
+			ft_printf("	  [%d]", cursor_b->value);
+			cursor_b = cursor_b->next;
+		}
+		ft_printf("\n");
+	}
 }
