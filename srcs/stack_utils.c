@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/25 03:04:46 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/27 02:30:12 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,29 @@ int	stack_size(t_stack **stack)
 		count++;
 	}
 	return (count);
+}
+
+/*
+	Return the node with the biggest value
+*/
+t_stack	*get_stack_max(t_stack **stack)
+{
+	t_stack	*cursor;
+	t_stack	*max;
+
+	if (!stack || !(*stack))
+		return (NULL);
+	cursor = *stack;
+	while (cursor)
+	{
+		if (!max)
+			max = cursor;
+		else
+			if (cursor->value > max->value)
+				max = cursor;
+		cursor = cursor->next;
+	}
+	return (max);
 }
 
 /*

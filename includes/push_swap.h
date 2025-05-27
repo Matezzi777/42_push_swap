@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/25 02:53:15 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/27 02:49:45 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,25 @@ void	rrb(t_stack **a, t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
 //Stack Utilitaries
-t_stack	*create_node(long value);
-t_bool	add_stack_elem(t_stack **stack, t_stack *node);
 int		stack_size(t_stack **stack);
+t_bool	add_stack_elem(t_stack **stack, t_stack *node);
+t_stack	*create_node(long value);
 t_stack	*free_stack(t_stack **stack);
+t_stack	*get_stack_max(t_stack **stack);
 
 //Parsing
-t_stack	*parse_arguments(int argc, char **argv);
-t_stack	*get_stack_from_string(char *str);
-t_bool	overflow_detected(t_stack *stack, int argc, char **argv);
 t_bool	double_detected(t_stack *stack);
+t_bool	overflow_detected(t_stack *stack, int argc, char **argv);
+t_stack	*get_stack_from_string(char *str);
+t_stack	*parse_arguments(int argc, char **argv);
 
 //Sort
 void	sort_small_stack(t_stack **a, int size);
 void	sort_stack(t_stack **a, int size);
+
+//Stack Infos
+void	define_targets(t_stack **a, t_stack **b);
+void	define_costs(t_stack **a, t_stack **b);
 
 //Verif
 t_bool	is_sorted(t_stack **stack);

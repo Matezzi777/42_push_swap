@@ -16,7 +16,9 @@ RAW_SRCS = push_swap.c \
 			parsing.c \
 			parsing_utils.c \
 			sort.c \
-			verif.c
+			verif.c \
+			target.c \
+			cost.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 

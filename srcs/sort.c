@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 05:52:30 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/25 03:13:06 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/05/27 02:48:12 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sort_small_stack(t_stack **a, int size)
 	long	x;
 	long	y;
 	long	z;
+
 	if (size == 2)
 		return (sa(a, NULL));
 	x = (*a)->value;
@@ -37,7 +38,6 @@ void	sort_small_stack(t_stack **a, int size)
 	else
 		ra(a, NULL);
 	return (sa(a, NULL));
-	
 }
 
 /*
@@ -53,8 +53,8 @@ void	sort_stack(t_stack **a, int size)
 	pb(a, &b);
 	while (stack_size(a) > 3 && !is_sorted(a))
 	{
-		// Définit la cible de chaque élément.
-		// Calcule le coût de chaque élément.
+		define_targets(a, &b);
+		define_costs(a, &b);
 		// Effectue les mouvements nécessaires pour placer l'élément
 		// 	le moins cher de a à sa place dans b.
 	}
