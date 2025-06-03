@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:16:43 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/03 15:45:05 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/03 16:51:35 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,18 +132,26 @@ void	ft_display_stacks(t_stack **a, t_stack **b)
 	{
 		if (cursor_a)
 		{
-			ft_printf("[%d]	%p	 %d	   %d		    %d		%p\n", cursor_a->value, cursor_a, cursor_a->cost, cursor_a->position, cursor_a->direction, cursor_a->target);
+			ft_printf("[%d]	%p	 %d	   %d		    %d", cursor_a->value, cursor_a, cursor_a->cost, cursor_a->position, cursor_a->direction);
+			if (cursor_a->target)
+				ft_printf("		   [%d]\n", cursor_a->target->value);
+			else
+				ft_printf("		  %p\n", cursor_a->target);
 			cursor_a = cursor_a->next;
 		}
 	}
-	ft_printf("\n	STACK B\nValue	  Adress	Cost	Position	Direction	Target\n");
+	ft_printf("\n	STACK B\nValue	  Adress	Cost	Position	Direction	  Target\n");
 	if (!cursor_b)
 		ft_printf("EMPTY.\n");
 	while (cursor_b)
 	{
 		if (cursor_b)
 		{
-			ft_printf("[%d]	%p	 %d	   %d		    %d		%p\n", cursor_b->value, cursor_b, cursor_b->cost, cursor_b->position, cursor_b->direction, cursor_b->target);
+			ft_printf("[%d]	%p	 %d	   %d		    %d", cursor_b->value, cursor_b, cursor_b->cost, cursor_b->position, cursor_b->direction);
+			if (cursor_b->target)
+				ft_printf("		  [%d]\n", cursor_b->target->value);
+			else
+				ft_printf("		  %p\n", cursor_b->target);
 			cursor_b = cursor_b->next;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 02:12:13 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/27 02:48:53 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/03 17:27:57 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,18 @@ void	define_targets(t_stack **a, t_stack **b)
 {
 	t_stack	*cursor;
 
-	if (!a || !(*a))
+	if (!a || !(*a) || !b || !(*b))
 		return ;
 	cursor = *a;
 	while (cursor)
 	{
 		define_node_target(cursor, b);
+		cursor = cursor->next;
+	}
+	cursor = *b;
+	while (cursor)
+	{
+		define_node_target(cursor, a);
 		cursor = cursor->next;
 	}
 }
