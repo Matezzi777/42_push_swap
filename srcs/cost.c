@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 02:32:30 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/27 02:50:57 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/03 15:42:23 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	define_directions(t_stack **stack)
 	{
 		if (i == 0)
 			cursor->direction = NONE;
-		else if (i < size / 2)
+		else if (i <= size / 2)
 			cursor->direction = UP;
 		else
 			cursor->direction = DOWN;

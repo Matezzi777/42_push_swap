@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 05:52:30 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/27 02:48:12 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/03 15:32:23 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,14 @@ void	sort_stack(t_stack **a, int size)
 		define_costs(a, &b);
 		// Effectue les mouvements nécessaires pour placer l'élément
 		// 	le moins cher de a à sa place dans b.
+		ft_display_stacks(a, &b);
+		break ;
 	}
-	sort_small_stack(a, stack_size(a));
-	while (stack_size(&b) > 0)
-	{
-		// Pousse l'élément en haut de b à sa place dans a.
-	}
-	// Met l'élément le plus petit en haut de a.
-	ft_display_stacks(a, &b);
+	// sort_small_stack(a, stack_size(a));
+	// while (stack_size(&b) > 0)
+	// {
+	// 	// Pousse l'élément en haut de b à sa place dans a.
+	// }
+	// // Met l'élément le plus petit en haut de a.
+	// ft_display_stacks(a, &b);
 }
