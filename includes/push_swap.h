@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/03 18:29:29 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/06 08:37:59 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ void	sort_small_stack(t_stack **a, int size);
 void	sort_stack(t_stack **a, int size);
 void	bring_cheapest_top(t_stack **a, t_stack **b);
 void	push_to_place(t_stack **a, t_stack **b);
+
+
+t_stack	*get_stack_min(t_stack **stack);
 
 //Stack Infos
 void	define_targets(t_stack **a, t_stack **b);
