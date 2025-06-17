@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 05:52:30 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/06 08:39:33 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/17 12:25:30 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,8 @@ void	sort_stack(t_stack **a, int size)
 	ft_display_stacks(a, &b);
 	bring_min_top(a, &b);
 	ft_display_stacks(a, &b);
+	// while (b)
+	// 	push_to_place(a, &b);
+	// ft_display_stacks(a, &b);
+	// // Met l'élément le plus petit en haut de a.
 }
