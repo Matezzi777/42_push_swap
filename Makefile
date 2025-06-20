@@ -20,7 +20,8 @@ RAW_SRCS = push_swap.c \
 			target.c \
 			cost.c \
 			move.c \
-			final_push.c
+			final_push.c \
+			bring_top.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 

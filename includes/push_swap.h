@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:24:58 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/06 08:37:59 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/20 12:57:34 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ void	sort_stack(t_stack **a, int size);
 void	bring_cheapest_top(t_stack **a, t_stack **b);
 void	push_to_place(t_stack **a, t_stack **b);
 
+//Bring_top
+void	bring_min_top(t_stack **a, t_stack **b);
+void	bring_max_top(t_stack **a, t_stack **b);
 
 t_stack	*get_stack_min(t_stack **stack);
 

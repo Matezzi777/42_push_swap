@@ -6,21 +6,12 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 05:52:30 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/17 12:25:30 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/20 12:56:48 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
-
-static void	bring_min_top(t_stack **a, t_stack **b)
-{
-	t_stack	*min;
-
-	min = get_stack_min(a);
-	while (*a != min)
-		ra(a, b);
-}
 
 /*
 	Sort a stack containing 2 or 3 nodes.
@@ -60,20 +51,21 @@ void	sort_stack(t_stack **a, int size)
 	b = NULL;
 	pb(a, &b);
 	pb(a, &b);
-	ft_display_stacks(a, &b);
+	// ft_display_stacks(a, &b);
 	while (stack_size(a) > 3 && !is_sorted(a))
 	{
 		bring_cheapest_top(a, &b);
 		pb(a, &b);
 	}
-	ft_display_stacks(a, &b);
+	// ft_display_stacks(a, &b);
 	sort_small_stack(a, stack_size(a));
-	ft_display_stacks(a, &b);
+	// ft_display_stacks(a, &b);
+	bring_max_top(a, &b);
 	while (b)
 		push_to_place(a, &b);
-	ft_display_stacks(a, &b);
+	// ft_display_stacks(a, &b);
 	bring_min_top(a, &b);
-	ft_display_stacks(a, &b);
+	// ft_display_stacks(a, &b);
 	// while (b)
 	// 	push_to_place(a, &b);
 	// ft_display_stacks(a, &b);

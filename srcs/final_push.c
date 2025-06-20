@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:27:46 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/06 08:37:55 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/20 09:46:22 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ void	push_to_place(t_stack **a, t_stack **b)
 {
 	define_final_targets(a, b);
 	while (*a != (*b)->target)
-		ra(a, b);
+	{
+		if ((*b)->target->direction == UP)
+			ra(a, b);
+		else
+			rra(a, b);
+	}
 	pa(a, b);
 }

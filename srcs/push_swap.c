@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 02:32:57 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/03 18:12:13 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/20 09:32:16 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	size = stack_size(&stack_a);
-	ft_display_stacks(&stack_a, NULL);
+	// ft_display_stacks(&stack_a, NULL);
 	if (is_sorted(&stack_a))
 	{
 		ft_printf("Already sort\n");
